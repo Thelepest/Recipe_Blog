@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <title>Homepage</title>
+</head>
+
+<body>
+    <div class="container my-5 text-center" style="max-width:580px">
+        <h1>MY RECIPES - HOMEPAGE</h1>
+        <p>Example of a Recipe Blog Homepage with a dynamic list of elements from the so-called "ricette" DB</p>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            {% for element in Cointainer %}
+            <div class="col-sm">
+                <div style="width: 18rem;">
+                    <img src="{{element.immagine}}" width="290" height="250">
+                    <div class="card-rating">
+                        <h6>Rating : {{element.rating}}/5</h6>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{element.recipe}}</h5>
+                        <p class="card-text">{{element.description}}</p>
+                        <a href="#" class="btn btn-primary">See Recipe</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+
+</body>
+
+</html>
